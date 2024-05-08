@@ -32,7 +32,7 @@ public class DemoController {
                                 .setWorkflowId(id)
                                 .setTaskQueue(TeamWorkflow.TASK_QUEUE)
                                 .build());
-        TeamWorkFlowRequest workflowRequest = TeamWorkFlowRequest.builder().build();
+        TeamWorkFlowRequest workflowRequest = TeamWorkFlowRequest.builder().test("testPayload").build();
         WorkflowClient.start(workflow::processTeamRequest, workflowRequest);
         return new ResponseEntity<>("demo", HttpStatus.OK);
     }
